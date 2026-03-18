@@ -12,7 +12,7 @@
       self.dandelion.modules.hjem
       self.dandelion.modules.hjem-impure
 
-      # self.dandelion.modules.browsers
+      self.dandelion.modules.browsers
       # self.dandelion.modules.office
     ];
   };

@@ -1,4 +1,8 @@
-{ self, ... }: {
+{ config, self, ... }:
+let
+  inherit (self.lib) mkDotsModule;
+  username = config.networking.hostName;
+in {
   dandelion.modules.editors = {
     environment.systemPackages = with pkgs; [
       bruno
@@ -41,5 +45,9 @@
       })
       zed-editor
     ];
+  };
+
+  dandelion.dots.editors = mkDotsModule username {
+
   };
 }

@@ -1,6 +1,5 @@
 { config, self, ... }:
 let
-  inherit (self.lib) mkDotsModule;
   username = config.networking.hostName;
 in {
   dandelion.users.common = { pkgs, lib, ... }: {
@@ -57,28 +56,4 @@ in {
       };
     };
   };
-
-  # Being able to nix freely,
-  # @Rexcrazy804 has spawned horrors upon this world.
-  # At least, he says he is sorry; but I doubt it.
-
-  # dandelion.dots.cli = args@{ config, ... }: (mkDotsModule username {
-  #   "git/config" = "/git/config";
-  # }) args;
-
-  # dandelion.dots.gui = args@{ config, ... }: (mkDotsModule username {
-  #   "uwsm/env" = "/uwsm/env";
-  #   "qt6ct/qt6ct.conf" = "/qt6ct/qt6ct.conf";
-  #   "gtk-4.0/settings.ini" = "/gtk/gtk4.ini";
-  # }) args;
-
-  # dandelion.dots.mango = args@{ config, ... }: (mkDotsModule username {
-  #   "mango/config.conf" = "/mango/config.conf";
-  #   "mango/autostart.sh" = "/mango/autostart.sh";
-  #   "mango/hardware.conf" = d: d.dotsDir + "/mango/${d.lib.toLower d.config.networking.hostName}.conf";
-  # }) args;
-
-  # dandelion.dots.hypr = args@{ config, ... }: (mkDotsModule username {
-  #   "hypr/hyprland.conf" = "/hyprland/hyprland.conf";
-  # }) args;
 }

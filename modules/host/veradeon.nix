@@ -1,21 +1,21 @@
 { self, ... }: {
-  dandelion.host.veradeon = { lib, pkgs, config, ... }:
+  dandelion.host.veradeon =
   let
     pkgx = self.lib.mkPkgx' pkgs;
   in {
     imports = [
-      # hardware
+      # host-specific hardware
       self.dandelion.modules.amd
 
-      # a common user's commonly shared profiles/dots
+      # a common user's commonly shared modules & dots within a common profile
       self.dandelion.users.common
       self.dandelion.profiles.common
-      # self.dandelion.dots.common          # <-- TODO: move common dots here soon
 
       # host specific profiles
       self.dandelion.profiles.gaming
 
-      # host-specific dots
+      # host-specific modules (+ optional dots)
+      # self.dandelion.modules.<module-name>
       # self.dandelion.dots.<dot-name>
     ];
 

@@ -1,22 +1,22 @@
 { self, ... }: {
-  dandelion.host.inspiron = { lib, pkgs, config, ... }:
+  dandelion.host.inspiron =
   let
     pkgx = self.lib.mkPkgx' pkgs;
   in {
     imports = [
-      # hardware
+      # host-specific hardware
       self.dandelion.modules.intel
 
-      # a common user's commonly shared profiles/dots
+      # a common user's commonly shared modules & dots within a common profile
       self.dandelion.users.common
       self.dandelion.profiles.common
-      # self.dandelion.dots.common          # <-- TODO: move common dots here soon
 
       # host-specific profiles
       self.dandelion.profiles.gaming
       # self.dandelion.profiles.gnome
 
-      # host-specific dots
+      # host-specific modules (+ optional dots)
+      # self.dandelion.modules.<module-name>
       # self.dandelion.dots.<dot-name>
     ];
 

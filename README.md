@@ -59,9 +59,9 @@ except wherever an explicit licensing is included.
 [dandelion setup]: https://github.com/Rexcrazy804/Zaphkiel
 [development]: ./modules/profiles/development.nix
 [dots]: ./dots
-[inspiron]: ./modules/host/inspiron.nix
+[inspiron]: ./modules/hosts/inspiron.nix
 [modules]: ./modules/
 [programs]: ./modules/programs/
 [profiles]: ./modules/profiles/
-[veradeon]: ./modules/host/veradeon.nix
+[veradeon]: ./modules/hosts/veradeon.nix
 [workstation]: ./modules/profiles/workstation.nix

@@ -1,5 +1,5 @@
 { self, ... }: {
-  dandelion.host.inspiron =
+  dandelion.hosts.inspiron =
   let
     pkgx = self.lib.mkPkgx' pkgs;
   in {

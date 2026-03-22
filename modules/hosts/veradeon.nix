@@ -1,5 +1,5 @@
 { self, ... }: {
-  dandelion.host.veradeon =
+  dandelion.hosts.veradeon =
   let
     pkgx = self.lib.mkPkgx' pkgs;
   in {
